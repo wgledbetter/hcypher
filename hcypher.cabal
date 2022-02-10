@@ -27,6 +27,8 @@ library
   exposed-modules:
       Lib
       Room1
+      Room2
+      Room3
   other-modules:
       Paths_hcypher
   hs-source-dirs:
