@@ -1,6 +1,8 @@
 -- Room 2 is about transposition
 
-module Room2 () where
+module Room2 (puzzle2L, puzzle2R) where
+
+import Room1 (splitL, splitR)
 
 --------------------------------------------------------------------------------
 -- Puzzle 1 --------------------------------------------------------------------
@@ -12,8 +14,14 @@ module Room2 () where
 --------------------------------------------------------------------------------
 -- Notes: Takes 2 input strings and alternates letters.
 
-puzzle1 :: [String] -> String
-puzzle1 ss = []
+-- Decoder using left fold
+puzzle2L :: String -> String
+puzzle2L = concat . transpose . splitL ' '
+
+-- Decoder using right fold
+puzzle2R :: String -> String
+puzzle2R = concat . transpose . splitR ' '
+
 
 --------------------------------------------------------------------------------
 -- Puzzle 3 --------------------------------------------------------------------
